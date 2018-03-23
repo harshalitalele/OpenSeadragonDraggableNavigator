@@ -7,6 +7,7 @@
     5. Check if this works with toggle navigator functionality
     6. Check if this works with no navigator (Put an initial check or make it visible)
     7. Remove events and icon on reset of draggable feature on navigator
+    8. Check for all null pointer exceptions
 */
 /******************************************************************************************/
 
