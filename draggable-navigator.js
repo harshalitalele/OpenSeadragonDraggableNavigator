@@ -1,5 +1,14 @@
-//To Do: Test with different POCs
-//To Do: Handle against all the navigator options like disable, toggle, outside viewer, etc.
+/*
+    To Dos:
+    1. Use proper icon for draggable element
+    2. Show icon on hover of navigator
+    3. Adjust position of icon on the basis of navigator location
+    4. Check if this supports all the OSD versions
+    5. Check if this works with toggle navigator functionality
+    6. Check if this works with no navigator (Put an initial check or make it visible)
+    7. Remove events and icon on reset of draggable feature on navigator
+*/
+/******************************************************************************************/
 
 (function($) {
     "use strict";
@@ -18,6 +27,7 @@
             } else {
                 var draggableDiv = document.createElement( "div" );
                 //To Do: Styling of draggable element
+                //To Do: Add a proper icon for draggable element
                 draggableDiv.style.width = "50px";
                 draggableDiv.style.height = "50px";
                 draggableDiv.style.backgroundColor = "blue";
