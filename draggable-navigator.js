@@ -8,6 +8,9 @@
     6. Check if this works with no navigator (Put an initial check or make it visible)
     7. Remove events and icon on reset of draggable feature on navigator
     8. Check for all null pointer exceptions
+    9. Make it work for default 'isSet' value
+    10. Add JavaScript docs
+    11. Review the code and naming conventions
 */
 /******************************************************************************************/
 
@@ -39,8 +42,8 @@
                     //To Do: See if commented code is required
                     //var elem = event.srcElement.parentElement.parentElement;
                     var elem = navigatorParent.parentElement;
-                    elem.style.top = event.y;
-                    elem.style.left = event.x;
+                    elem.style.top = event.y + "px";
+                    elem.style.left = event.x + "px";
                     elem.style.zIndex = 99999;
                 });
                 draggableDiv.setAttribute("draggable", "true");
