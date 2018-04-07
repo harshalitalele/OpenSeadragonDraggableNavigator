@@ -6,6 +6,11 @@ var osd = OpenSeadragon({
     showNavigator: true,
     navigatorAutoFade: false,
     showNavigationControl: false
-});
+}), isNavDraggable = true;
 
-osd.setNavigatorDraggable(true);
+function toggleNavDrag() {
+	isNavDraggable = !isNavDraggable;
+	osd.setNavigatorDraggable(isNavDraggable);
+}
+
+osd.setNavigatorDraggable(isNavDraggable);
