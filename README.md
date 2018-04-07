@@ -7,18 +7,18 @@ This is a plugin for [OpenSeadragon](http://openseadragon.github.io/) library, w
 To make navigator provided with OpenSeadragon library draggable, first include 'draggable-navigator.js' file into the project after including OpenSeadragon library.
 
 ```markdown
-`
+
 <script src="draggable-navigator.js"></script>
-`
+
 ```
 
 Then it can be used like this:
 
 ```markdown
-`
+
 var viewer = new OpenSeadragon.Viewer(...);
 viewer.setNavigatorDraggable(true);
-`
+
 ```
 
 ### Demo:
