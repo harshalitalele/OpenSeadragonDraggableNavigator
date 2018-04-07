@@ -1,4 +1,4 @@
-## Draggable Navigator
+## OpenSeadragon Draggable Navigator
 
 This is a plugin for [OpenSeadragon](http://openseadragon.github.io/) library, which lets user drag navigator over the viewer area.
 
