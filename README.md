@@ -4,7 +4,7 @@ This is a plugin for [OpenSeadragon](http://openseadragon.github.io/) library, w
 
 ### How to Use:
 
-To make navigator provided with OpenSeadragon library draggable, first include ```markdown'/openseadragon-draggable-navigator.js'``` file into the project after including OpenSeadragon library.
+To make navigator provided with OpenSeadragon library draggable, first include ```'/openseadragon-draggable-navigator.js'``` file into the project after including OpenSeadragon library.
 
 ```markdown
 
