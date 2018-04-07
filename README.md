@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+## Draggable Navigator
 
-You can use the [editor on GitHub](https://github.com/harshalitalele/OpenSeadragonDraggableNavigator/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a plugin for [OpenSeadragon](http://openseadragon.github.io/) library, which lets user drag navigator over the viewer area.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Demo](https://harshalitalele.github.io/OpenSeadragonDraggableNavigator/) 
 
-### Markdown
+### How to Use:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To make navigator provided with OpenSeadragon library draggable, first include 'draggable-navigator.js' file into the project after including OpenSeadragon library.
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+`
+<script src="draggable-navigator.js"></script>
+`
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Then it can be used like this:
 
-### Jekyll Themes
+```markdown
+`
+var viewer = new OpenSeadragon.Viewer(...);
+viewer.setNavigatorDraggable(true);
+`
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/harshalitalele/OpenSeadragonDraggableNavigator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Demo:
 
-### Support or Contact
+[Demo](https://harshalitalele.github.io/OpenSeadragonDraggableNavigator/)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### To Do:
+
+1. Use proper icon for draggable element
+2. Show icon on hover of navigator
+3. Adjust position of icon on the basis of navigator location
+4. Check if this supports all the OSD versions
+5. Check if this works with toggle navigator functionality
+6. Check if this works with no navigator (Put an initial check or make it visible)
+7. Remove events and icon on reset of draggable feature on navigator
+8. Check for all null pointer exceptions
+9. Make it work for default 'isSet' value
+10. Add JavaScript docs
+11. Review the code and naming conventions
+12. Don't fade navigator if user is dragging it
