@@ -1,27 +1,14 @@
-/*
-    To Dos:
-    1. Use proper icon for draggable element
-    2. Show icon on hover of navigator
-    3. Adjust position of icon on the basis of navigator location
-    4. Check if this supports all the OSD versions
-    5. Check if this works with toggle navigator functionality
-    6. Check if this works with no navigator (Put an initial check or make it visible)
-    7. Remove events and icon on reset of draggable feature on navigator
-    8. Check for all null pointer exceptions
-    9. Make it work for default 'isSet' value
-    10. Add JavaScript docs
-    11. Review the code and naming conventions
-    12. Don't fade navigator if user is dragging it
-*/
-/******************************************************************************************/
-
+/**
+ *
+ * @author Harshali Talele <https://github.com/harshalitalele/OpenSeadragonDraggableNavigator>
+ */
 (function($) {
     "use strict";
 
     //To Do: Test with different versions of OSD
-    /*if (!$.version || $.version.major < 2) {
-        throw new Error('This version of OpenSeadragonZoomLevels requires OpenSeadragon version 2.0.0+');
-    }*/
+    if (!$.version || $.version.major < 2) {
+        throw new Error('This version of OpenSeadragonDraggableNavigator requires OpenSeadragon version 2.0.0+');
+    }
 
     $.Viewer.prototype.setNavigatorDraggable = function(isSet) {
         var droppableElem = this.element;
@@ -44,8 +31,6 @@
                 draggableDiv.textContent = "+";
 
                 draggableDiv.addEventListener("drag", function(event) {
-                    //To Do: See if commented code is required
-                    //var elem = event.srcElement.parentElement.parentElement;
                     var elem = navigatorParent.parentElement;
                     var osdy = droppableElem.getBoundingClientRect().y;
                     var osdx = droppableElem.getBoundingClientRect().x;
