@@ -2,8 +2,6 @@
 
 This is a plugin for [OpenSeadragon](http://openseadragon.github.io/) library, which lets user drag navigator over the viewer area.
 
-[Demo](https://harshalitalele.github.io/OpenSeadragonDraggableNavigator/) 
-
 ### How to Use:
 
 To make navigator provided with OpenSeadragon library draggable, first include 'draggable-navigator.js' file into the project after including OpenSeadragon library.
