@@ -30,9 +30,10 @@
                 
                 var draggableDiv = document.createElement( "img" );
                 draggableDiv.setAttribute("id", draggableItemId);
-                draggableDiv.setAttribute("src", "move-arrows.svg");
                 draggableDiv.style.width = draggableDivSize + "px";
                 draggableDiv.style.height = draggableDivSize + "px";
+                draggableDiv.setAttribute("src", "move-arrows.svg");
+                draggableDiv.setAttribute("alt", "+");
                 draggableDiv.style.zIndex = 99999;
                 draggableDiv.style.position = "absolute";
                 draggableDiv.style.left = "-25px";
