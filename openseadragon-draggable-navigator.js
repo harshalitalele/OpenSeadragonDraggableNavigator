@@ -21,8 +21,9 @@
             } else {
                 function moveNavigator(event) {
                     var elem = navigatorParent.parentElement, 
-                        osdy = droppableElem.getBoundingClientRect().y,
-                        osdx = droppableElem.getBoundingClientRect().x;
+                        droppablePos = droppableElem.getBoundingClientRect(),
+                        osdy = droppablePos.y ? droppablePos.y : droppablePos.top,
+                        osdx = droppablePos.x ? droppablePos.x : droppablePos.left;
                     elem.style.top =  event.y - osdy - navigatorParent.scrollHeight + "px";
                     elem.style.left = event.x - osdx + "px";
                     elem.style.zIndex = 99999;
@@ -41,7 +42,7 @@
 
                 draggableDiv.addEventListener("drag", moveNavigator);
                 draggableDiv.setAttribute("draggable", "true");
-                navigatorParent.append(draggableDiv);
+                navigatorParent.appendChild(draggableDiv);
 
                 droppableElem.addEventListener("dragover", function(event) {
                     event.preventDefault();
