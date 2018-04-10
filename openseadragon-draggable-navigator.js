@@ -19,29 +19,36 @@
             if(this.navigator._draggable) {
                 return;
             } else {
-                var draggableDiv = document.createElement( "div" );
-                draggableDiv.setAttribute("id", draggableItemId);
-                draggableDiv.style.width = draggableDivSize + "px";
-                draggableDiv.style.height = draggableDivSize + "px";
-                draggableDiv.style.backgroundColor = "black";
-                draggableDiv.style.zIndex = 99999;
-                draggableDiv.style.color = "white";
-                draggableDiv.style.textAlign = "center";
-                draggableDiv.style.fontWeight = "bolder";
-                draggableDiv.textContent = "+";
-
-                draggableDiv.addEventListener("drag", function(event) {
+                function moveNavigator(event) {
                     var elem = navigatorParent.parentElement, 
                         osdy = droppableElem.getBoundingClientRect().y,
                         osdx = droppableElem.getBoundingClientRect().x;
-                    elem.style.top = event.y - osdy - navigatorParent.scrollHeight + "px";
+                    elem.style.top =  event.y - osdy - navigatorParent.scrollHeight + "px";
                     elem.style.left = event.x - osdx + "px";
                     elem.style.zIndex = 99999;
-                });
+                }
+                
+                var draggableDiv = document.createElement( "img" );
+                draggableDiv.setAttribute("id", draggableItemId);
+                draggableDiv.style.width = draggableDivSize + "px";
+                draggableDiv.style.height = draggableDivSize + "px";
+                draggableDiv.setAttribute("src", "move-arrows.svg");
+                draggableDiv.setAttribute("alt", "+");
+                draggableDiv.style.zIndex = 99999;
+                draggableDiv.style.position = "absolute";
+                draggableDiv.style.left = "-25px";
+                draggableDiv.style.bottom = "-25px";
+
+                draggableDiv.addEventListener("drag", moveNavigator);
                 draggableDiv.setAttribute("draggable", "true");
                 navigatorParent.append(draggableDiv);
+
                 droppableElem.addEventListener("dragover", function(event) {
                     event.preventDefault();
+                });
+                droppableElem.addEventListener("drop", function(event) {
+                    event.preventDefault();
+                    moveNavigator(event);
                 });
             }
             this.navigator._draggable = true;
