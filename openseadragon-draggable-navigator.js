@@ -40,12 +40,11 @@
                 draggableDiv.style.left = "-25px";
                 draggableDiv.style.bottom = "-25px";
 
-                draggableDiv.addEventListener("drag", moveNavigator);
                 draggableDiv.setAttribute("draggable", "true");
                 navigatorParent.appendChild(draggableDiv);
 
                 droppableElem.addEventListener("dragover", function(event) {
-                    event.preventDefault();
+                    moveNavigator(event);
                 });
                 droppableElem.addEventListener("drop", function(event) {
                     event.preventDefault();
