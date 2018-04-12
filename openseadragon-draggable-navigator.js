@@ -26,6 +26,7 @@
                         osdx = droppablePos.x ? droppablePos.x : droppablePos.left;
                     elem.style.top =  event.y - osdy - navigatorParent.scrollHeight + "px";
                     elem.style.left = event.x - osdx + "px";
+                    elem.style.right = "auto";
                     elem.style.zIndex = 99999;
                 }
                 
