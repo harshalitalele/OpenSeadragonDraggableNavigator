@@ -27,10 +27,10 @@ viewer.setNavigatorDraggable(true);
 
 ### To Do:
 
-<s>1. Use proper icon for draggable element</s>
+1. <s>Use proper icon for draggable element</s>
 2. Show icon on hover of navigator
 3. Adjust position of icon on the basis of navigator location
 4. Check if this supports all the OSD versions
-<s>5. Remove events and icon on reset of draggable feature on navigator</s>
-<s>6. Make it work for default 'isSet' value</s>
+5. <s>Remove events and icon on reset of draggable feature on navigator</s>
+6. <s>Make it work for default 'isSet' value</s>
 7. Don't fade navigator if user is dragging it
