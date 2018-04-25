@@ -13,7 +13,8 @@
         var droppableElem = this.element, 
             navigatorParent = this.navigator.container.parentElement.parentElement, 
             draggableDivSize = 25, 
-            draggableItemId = "osd-draggable-nav";
+            draggableItemId = "osd-draggable-nav",
+            dragMouseTracker;
 
         if(isSet) {
             if(this.navigator._draggable) {
@@ -44,16 +45,16 @@
                 draggableDiv.setAttribute("draggable", "true");
                 navigatorParent.appendChild(draggableDiv);
 
-                droppableElem.addEventListener("dragover", function(event) {
-                    moveNavigator(event);
-                });
-                droppableElem.addEventListener("drop", function(event) {
-                    event.preventDefault();
-                    moveNavigator(event);
+                dragMouseTracker = new $.MouseTracker({
+                    element     : "osd-draggable-nav",
+                    dragHandler: $.delegate( this, function(event) {
+                        moveNavigator(event.originalEvent);
+                    } )
                 });
             }
             this.navigator._draggable = true;
         } else {
+            dragMouseTracker.destroy();
             var draggableDiv = document.getElementById(draggableItemId);
             draggableDiv.parentElement.removeChild(draggableDiv);
             this.navigator._draggable = false;
